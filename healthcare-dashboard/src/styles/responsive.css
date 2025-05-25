@@ -1,0 +1,58 @@
+/* Mobile First Approach */
+@media (max-width: 768px) {
+  :root {
+    --sidebar-width: 100%;
+    --header-height: 70px;
+  }
+
+  .sidebar {
+    position: fixed;
+    left: -100%;
+    transition: left 0.3s ease;
+    z-index: 1000;
+  }
+
+  .sidebar.open {
+    left: 0;
+  }
+
+  .dashboard-main {
+    margin-left: 0 !important;
+    padding: var(--spacing-sm);
+  }
+
+  .dashboard-grid {
+    grid-template-columns: 1fr !important;
+    gap: var(--spacing-md);
+  }
+
+  .calendar-section {
+    order: 2;
+  }
+
+  .anatomy-section {
+    order: 1;
+  }
+
+  .schedule-activity-section {
+    order: 3;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .dashboard-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-lg);
+  }
+
+  .schedule-activity-section {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (min-width: 1025px) {
+  .dashboard-grid {
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: var(--spacing-xl);
+  }
+}
